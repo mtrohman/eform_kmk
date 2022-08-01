@@ -45,7 +45,7 @@
         </a>
         <div class="">
           <div class="text-white brand inline no-border d-sm-inline-block">
-            <h4>{{ env('APP_CLIENT', 'Eform BPR') }}</h4>{{-- <img src="{{ asset("assets/img/logo_white.png") }}" alt="logo" data-src="{{ asset("assets/img/logo_white.png") }}" data-src-retina="{{ asset("assets/img/logo_white_2x.png") }}" width="78" height="22"> --}}
+            <h4>{{ env('APP_NAME', 'Eform BPR') }}</h4>{{-- <img src="{{ asset("assets/img/logo_white.png") }}" alt="logo" data-src="{{ asset("assets/img/logo_white.png") }}" data-src-retina="{{ asset("assets/img/logo_white_2x.png") }}" width="78" height="22"> --}}
           </div>
           
           
@@ -148,10 +148,10 @@
           <div class="copyright sm-text-center">
             <p class="small-text no-margin pull-left sm-pull-reset">
               Formulir Elektronik
-              <span class="hint-text m-l-15">BPR Online</span>
+              <span class="hint-text m-l-15">{{ env("APP_CLIENT") }}</span>
             </p>
             <p class="small no-margin pull-right sm-pull-reset">
-              Hand-crafted <span class="hint-text"> <a href="https://mtrohman.github.io/cv">by MTrohman</a></span>
+              Hand-crafted <span class="hint-text"> <a href="#">by Omegatama Computer</a></span>{{-- https://mtrohman.github.io/cv --}}
             </p>
             <div class="clearfix"></div>
           </div>

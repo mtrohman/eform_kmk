@@ -63,16 +63,16 @@
                                     </td>
 
                                     <td>
-                                        <a href='{{ route("admin.form-responses.edit", $formResponse->id) }}'>
-                                            <button class="btn btn-primary  btn-icon-left mb-1" type="button"><i class="pg-icon">send</i><span class="">Reply</span></button>
-                                        </a>
+                                        {{-- <a href='{{ route("admin.form-responses.edit", $formResponse->id) }}'>
+                                            <button class="btn btn-primary  btn-icon-left mb-1" type="button"><i class="pg-icon">send</i><span class="">Balas</span></button>
+                                        </a> --}}
 
                                         <a href='{{ route("admin.form-responses.show", $formResponse->id) }}'>
                                             <button class="btn btn-info  btn-icon-left mb-1" type="button"><i class="pg-icon">eye</i><span class="">View</span></button>
                                         </a>
 
-                                        <a href='{{ route("admin.form-responses.edit", $formResponse->id) }}'>
-                                            <button class="btn btn-success  btn-icon-left mb-1" type="button"><i class="material-icons">whatsapp</i><span class="">Whatsapp</span></button>
+                                        <a href='https://wa.me/62817384913?text=Salam%2C+terdapat+form+pengajuan+online+baru+dari+%0aNama *{{ $formResponse->data->nama_lengkap }}*+%0aAlamat {{ $formResponse->data->alamat }}+%0ainformasi+lebih+lanjut+klik+link+berikut%3A+%0a{{ route("admin.form-responses.show", $formResponse->id) }}'>
+                                            <button class="btn btn-success  btn-icon-left mb-1" type="button"><i class="material-icons">whatsapp</i><span class="">Teruskan ke AO</span></button>
                                         </a>
 
                                     </td>
