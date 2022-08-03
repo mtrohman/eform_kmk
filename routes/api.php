@@ -97,3 +97,8 @@ Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'adm
   Route::get('/credit-forms/search/{title}', 'CreditFormController@search')->name('credit-forms.search'); 
   Route::apiResource('credit-forms', 'CreditFormController'); 
 });
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => ['auth:api']], function () { 
+  Route::get('/recipients/search/{title}', 'RecipientController@search')->name('recipients.search'); 
+  Route::apiResource('recipients', 'RecipientController'); 
+});

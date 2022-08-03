@@ -44,8 +44,11 @@
           <i class="pg-icon">menu</i>
         </a>
         <div class="">
-          <div class="text-white brand inline no-border d-sm-inline-block">
-            <h4>{{ env('APP_NAME', 'Eform BPR') }}</h4>{{-- <img src="{{ asset("assets/img/logo_white.png") }}" alt="logo" data-src="{{ asset("assets/img/logo_white.png") }}" data-src-retina="{{ asset("assets/img/logo_white_2x.png") }}" width="78" height="22"> --}}
+          <div class="brand inline no-border d-sm-inline-block">
+            <a href="{{ route('guest.index') }}" class="text-white">
+              <h4>{{ env('APP_NAME', 'Eform BPR') }}</h4>{{-- <img src="{{ asset("assets/img/logo_white.png") }}" alt="logo" data-src="{{ asset("assets/img/logo_white.png") }}" data-src-retina="{{ asset("assets/img/logo_white_2x.png") }}" width="78" height="22"> --}}
+              
+            </a>
           </div>
           
           
@@ -73,17 +76,17 @@
                 <span class=" arrow"></span></a>
                 <ul class="">
                   <li class="">
-                    <a href="guest?form=tabungan">
+                    <a href="\guest?form=tabungan">
                       Tabungan
                     </a>
                   </li>
                   <li class="">
-                    <a href="guest?form=deposito">
+                    <a href="\guest?form=deposito">
                       Deposito
                     </a>
                   </li>
                   <li class="">
-                    <a href="guest?form=kredit">
+                    <a href="\guest?form=kredit">
                       Kredit
                     </a>
                   </li>
@@ -121,10 +124,14 @@
           <!-- START PAGE CONTENT -->
           <div class="content">
             <!-- START JUMBOTRON -->
-            <div class="jumbotron no-margin" data-pages="parallax">
-              <div class=" container container-fixed-lg sm-p-l-0 sm-p-r-0">
-                <div class="inner" style="transform: translateY(0px); opacity: 1;">
-                  <h3 class="">@yield('title', 'Page Title')</h3>
+            {{-- <div class="jumbotron no-margin" data-pages="parallax"> --}}
+            <div class="jumbotron" data-pages="parallax" data-scroll-element=".page-container">  
+              {{-- <div class=" container container-fixed-lg sm-p-l-0 sm-p-r-0"> --}}
+              <div class=" container container-fixed-lg sm-p-l-0 sm-p-r-0">  
+                <div class="inner"> {{-- style="transform: translateY(0px); opacity: 1;"style="transform: translateY(0px); opacity: 1;" --}}
+                  <h3 class="">@yield('title')</h3>
+                  @yield('jumbotron')
+
                 </div>
               </div>
             </div>
@@ -132,11 +139,7 @@
               <main class="py-4 pb-5">
                 @yield('content')
               </main>
-            {{-- <div class=" container">
-              <!-- PLEASE REMOVE demo-container CLASS ABOVE, ITS ONLY FOR DEMO PUPPOSE
-                    TO SHOW THE PARRALAX EFFECT
-                  -->
-            </div> --}}
+            
             
           </div>
           <!-- END PAGE CONTENT -->

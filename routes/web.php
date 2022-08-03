@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::group([ 'namespace'=> '\App\Http\Controllers' ], function () { 
-  Route::resource('guest', 'GuestController');
+  Route::resource('guest', 'GuestController')->except([
+    'show', 'update', 'destroy'
+]);;
+  Route::get('guest/{uuid}', 'GuestController@show')->name('guest.cek');
 });
 
 Route::get('/', function () {
@@ -86,5 +89,11 @@ Route::group([ 'namespace'=> '\App\Http\Controllers\Admin', 'prefix' => 'admin',
 });
 
 Route::group([ 'namespace'=> '\App\Http\Controllers\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => 'auth' ], function () { 
-  Route::resource('form-responses', 'FormResponseController'); 
+  Route::resource('form-responses', 'FormResponseController');
+  Route::get('form-responses/{id}/forward', 'FormResponseController@forward')->name('form-responses.forward');
+  Route::get('form-responses/{id}/send/{uuid}', 'FormResponseController@send')->name('form-responses.send');
+});
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => 'auth' ], function () { 
+  Route::resource('recipients', 'RecipientController'); 
 });

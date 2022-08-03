@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CreditForm;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\CreditForm;
 use App\Models\FormResponse;
 
 class GuestController extends Controller
@@ -58,6 +59,7 @@ class GuestController extends Controller
         $request_data = $request->except(['_token', 'g-recaptcha-response']);
         // return $request_data;
         $data = (object)[];
+        $data->uuid = Str::uuid();
         foreach ($request_data as $key => $value) {
             $data->$key = $value;
         }
@@ -83,10 +85,11 @@ class GuestController extends Controller
      * @param  \App\Models\CreditForm  $creditForm
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($uuid)
     {
-        $formResponse = FormResponse::findOrFail($id);
-        return $formResponse;
+        $formResponse = FormResponse::where('data->uuid', $uuid)->firstOrFail();
+        // return $formResponse;
+        return view('pengajuan.show', compact('formResponse'));
     }
 
     /**

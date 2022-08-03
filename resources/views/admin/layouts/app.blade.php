@@ -59,8 +59,8 @@
           <div class="dropdown pull-right d-lg-block">
             <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="profile dropdown">
               <span class="thumbnail-wrapper d32 circular inline">
-						    <img src="{{ asset("assets/img/profiles/avatar.jpg") }}" alt="" data-src="{{ asset("assets/img/profiles/avatar.jpg") }}"
-							  data-src-retina="{{ asset("assets/img/profiles/avatar_small2x.jpg") }}" width="32" height="32">
+						    <img src="{{ asset("assets/img/profiles/bb.jpg") }}" alt="" data-src="{{ asset("assets/img/profiles/bb.jpg") }}"
+							  data-src-retina="{{ asset("assets/img/profiles/bb2x.jpg") }}" width="32" height="32">
 					    </span>
             </button>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
@@ -106,7 +106,7 @@
                 <a href="javascript:;"><span class="title">Master Data</span>
                 <span class=" arrow"></span></a>
                 <ul class="">
-                  <li class="">
+                  {{-- <li class="">
                     <a href="{{ route('admin.work-types.index') }}">
                       {{ __('Work Types') }}
                     </a>
@@ -128,7 +128,7 @@
                     <a href="{{ route('admin.home-facilities.index') }}">
                       {{ __('Home Facilities') }}
                     </a>
-                  </li>
+                  </li> --}}
 
                   <li class="">
                     <a href="{{ route('admin.credit-times.index') }}">
@@ -142,11 +142,11 @@
                     </a>
                   </li>
 
-                  <li class="">
+                  {{-- <li class="">
                     <a href="{{ route('admin.income-sources.index') }}">
                       {{ __('Income Sources') }}
                     </a>
-                  </li>
+                  </li> --}}
 
                   <li class="">
                     <a href="{{ route('admin.debt-guarantees.index') }}">
@@ -157,6 +157,12 @@
                   <li class="">
                     <a href="{{ route('admin.guarantee-statuses.index') }}">
                       {{ __('Guarantee Statuses') }}
+                    </a>
+                  </li>
+
+                  <li class="">
+                    <a href="{{ route('admin.recipients.index') }}">
+                      {{ __('Recipients') }}
                     </a>
                   </li>
 

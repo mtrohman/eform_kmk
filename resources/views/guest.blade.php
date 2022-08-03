@@ -1,7 +1,5 @@
 @extends('layouts.guest')
 
-@section('title', 'Form Pengajuan '.ucwords(request()->query('form','')))
-
 @section('styles')
 <link href="{{ asset('assets/plugins/bootstrap-datepicker/css/datepicker3.css')}}" rel="stylesheet" type="text/css" media="screen">
 <link href="{{ asset('assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" media="screen" />
@@ -26,6 +24,28 @@
 </style>
 @endsection
 
+@if(empty(request()->query('form')))
+
+    @section('jumbotron') 
+        <div class="row row m-b-1">
+            <div class="col-12">
+                <!-- START card -->
+                <div class="card card-transparent">
+                    <div class="card-body text-center">
+                        <h3>
+                            Formulir Pengajuan Online BPR Klepu Mitra Kencana
+                        </h3>
+                        <p>Layanan Perbankan Bernilai Tambah</p>
+                    </div>
+                </div>
+                <!-- END card -->
+            </div>
+        </div>
+    @endsection
+@else
+    @section('title', 'Form Pengajuan '.ucwords(request()->query('form','')))
+@endif
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -46,13 +66,13 @@
                     @else
                         <div class="row">
                             <div class="col-md-4">
-                                <a href="guest?form=tabungan" class="btn btn-lg btn-primary btn-block">Tabungan</a>
+                                <a href="guest?form=tabungan" class="btn btn-lg btn-primary btn-block my-2">Tabungan</a>
                             </div>
                             <div class="col-md-4">
-                                <a href="guest?form=deposito" class="btn btn-lg btn-primary btn-block">Deposito</a>
+                                <a href="guest?form=deposito" class="btn btn-lg btn-primary btn-block my-2">Deposito</a>
                             </div>
                             <div class="col-md-4">
-                                <a href="guest?form=kredit" class="btn btn-lg btn-primary btn-block">Kredit</a>
+                                <a href="guest?form=kredit" class="btn btn-lg btn-primary btn-block my-2">Kredit</a>
                             </div>
                         </div>
                     @endif
