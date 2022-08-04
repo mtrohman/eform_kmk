@@ -45,8 +45,11 @@
           <i class="pg-icon">menu</i>
         </a>
         <div class="">
-          <div class="text-white brand inline no-border d-sm-inline-block">
-            <h4>{{ env("APP_CLIENT") }}</h4>{{-- <img src="{{ asset("assets/img/logo_white.png") }}" alt="logo" data-src="{{ asset("assets/img/logo_white.png") }}" data-src-retina="{{ asset("assets/img/logo_white_2x.png") }}" width="78" height="22"> --}}
+          <div class=" brand inline no-border d-sm-inline-block">
+            <a href="{{ route('guest.index') }}" class="text-white">
+              <h4>{{ env("APP_CLIENT") }}</h4>{{-- <img src="{{ asset("assets/img/logo_white.png") }}" alt="logo" data-src="{{ asset("assets/img/logo_white.png") }}" data-src-retina="{{ asset("assets/img/logo_white_2x.png") }}" width="78" height="22"> --}}
+              
+            </a>
           </div>
           
           
@@ -106,30 +109,6 @@
                 <a href="javascript:;"><span class="title">Master Data</span>
                 <span class=" arrow"></span></a>
                 <ul class="">
-                  {{-- <li class="">
-                    <a href="{{ route('admin.work-types.index') }}">
-                      {{ __('Work Types') }}
-                    </a>
-                  </li>
-
-                  <li class="">
-                    <a href="{{ route('admin.family-relations.index') }}">
-                      {{ __('Family Relations') }}
-                    </a>
-                  </li>
-
-                  <li class="">
-                    <a href="{{ route('admin.home-ownership-statuses.index') }}">
-                      {{ __('Home Ownership Statuses') }}
-                    </a>
-                  </li>
-
-                  <li class="">
-                    <a href="{{ route('admin.home-facilities.index') }}">
-                      {{ __('Home Facilities') }}
-                    </a>
-                  </li> --}}
-
                   <li class="">
                     <a href="{{ route('admin.credit-times.index') }}">
                       {{ __('Credit Times') }}

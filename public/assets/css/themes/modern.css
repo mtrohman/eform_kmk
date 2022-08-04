@@ -906,7 +906,7 @@ body.menu-pin .overlay .overlay-brand {
   }
   .horizontal-app-menu .menu-bar > ul > li:first-child a,
   .horizontal-app-menu .menu-bar > ul > li:last-child a {
-    padding-right: 32px !important;
+    /*padding-right: 32px !important;*/
     padding-left: 20px !important;
   }
   .horizontal-app-menu .menu-bar ul {
@@ -19760,7 +19760,7 @@ Main components
   .horizontal-app-menu .header .header-inner .brand.inline {
     padding: 0;
     margin: 0;
-    margin-left: 35px;
+    /*margin-left: 35px;*/
   }
   .horizontal-app-menu .menu-bar ul li a {
     padding-right: 20px !important;

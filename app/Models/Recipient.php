@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recipient extends Model
 {
-    protected $guarded = ['id'];
+    protected $guarded = [
+        'id'
+    ];
 
-        /**
+    /**
      * The attributes that should be cast.
      *
      * @var array
@@ -16,4 +18,5 @@ class Recipient extends Model
     protected $casts = [
         'data' => 'object',
     ];
+    
 }

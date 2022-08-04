@@ -66,8 +66,16 @@ class RecipientController extends Controller
 
     public function update(RecipientRequest $request, Recipient $recipient)
     {
+        $data = (object)[];
+        $data->uuid = $recipient->data->uuid;
         try {
-            $recipient = $recipient->update($request->all());
+            // $recipient = $recipient->fill($request->all());
+            foreach ($request->data as $key => $value) {
+                $data->$key = $value;
+            }
+
+            $recipient->data = $data;
+            $recipient->save();
 
             $notification = array(
                 'message' => 'Recipient saved successfully!',

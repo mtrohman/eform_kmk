@@ -15,11 +15,11 @@
                     </div>
                     @endif
 
-                    <table class="table table-condensed">
+                    <table class="table">
                         <thead class="thead-light">
                             <tr>
                                 <th>Nama</th>
-                                <th>Pilihan</th>
+                                <th width="5%">Pilihan</th>
                             </tr>
                         </thead>
                         
