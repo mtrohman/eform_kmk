@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Models\CreditForm;
 use App\Models\FormResponse;
 
@@ -65,18 +66,31 @@ class GuestController extends Controller
         }
         $fr = new FormResponse();
         $fr->data = $data;
+
         try {
             $fr->save();
+            $response = Http::post('https://maker.ifttt.com/trigger/'.env('IFTTT_EVENT').'/with/key/'.env('IFTTT_KEY'), [
+                'value1' => $fr->data->form,
+                'value2' => $fr->data->nama_lengkap,
+                'value3' => route('admin.form-responses.index', ['form'=>$fr->data->form]),
+            ]);
+
             $notification = array(
                 'message' => 'Data Berhasil Di Simpan! Kami akan segera menghubungi anda',
                 'alert-type' => 'success'
             );
             
+            return redirect()->route('guest.index')->with($notification);
+            
         } catch (Exception $e) {
-            // Error
+            $notification = array(
+                'message' => $e->getMessage(),
+                'alert-type' => 'error'
+            );
+
+            return redirect()->back()->with($notification);
         }
 
-        return redirect()->route('guest.index')->with($notification);
     }
 
     /**
