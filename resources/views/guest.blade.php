@@ -21,6 +21,12 @@
         min-height: 2rem;
     }
 
+    .img-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 </style>
 @endsection
 
@@ -64,15 +70,30 @@
                         @yield('form_content')
                         {{-- expr --}}
                     @else
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <div class="col-md-4">
-                                <a href="guest?form=tabungan" class="btn btn-lg btn-primary btn-block my-2">Tabungan</a>
+                                <a href="guest?form=tabungan" class="">
+                                    <img src="{{ asset('assets/img/tabungan.png') }}" alt="" height="200vh" class="img-center">
+                                    <button class="btn btn-lg btn-primary btn-block my-2">
+                                        Tabungan
+                                    </button>    
+                                </a>
                             </div>
                             <div class="col-md-4">
-                                <a href="guest?form=deposito" class="btn btn-lg btn-primary btn-block my-2">Deposito</a>
+                                <a href="guest?form=deposito" class="">
+                                    <img src="{{ asset('assets/img/deposito.png') }}" alt="" height="200vh" class="img-center">
+                                    <button class="btn btn-lg btn-primary btn-block my-2">
+                                        Deposito
+                                    </button>    
+                                </a>
                             </div>
                             <div class="col-md-4">
-                                <a href="guest?form=kredit" class="btn btn-lg btn-primary btn-block my-2">Kredit</a>
+                                <a href="guest?form=kredit" class="">
+                                    <img src="{{ asset('assets/img/kredit.png') }}" alt="" height="200vh" class="img-center">
+                                    <button class="btn btn-lg btn-primary btn-block my-2">
+                                        Kredit
+                                    </button>    
+                                </a>
                             </div>
                         </div>
                     @endif

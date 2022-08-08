@@ -21,8 +21,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta content="Meet pages - The simplest and fastest way to build web UI for your dashboard or app." name="description" />
-    <meta content="Ace" name="author" />
+    <meta content="Aplikasi Form Pengajuan Online PT BPR Klepu Mitra Kencana" name="description" />
+    <meta content="mtrohman12" name="author" />
     <link href="{{ asset("assets/plugins/pace/pace-theme-flash.css") }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("assets/plugins/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
 
